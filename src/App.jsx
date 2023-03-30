@@ -6,7 +6,7 @@ import SideCart from './components/SideCart/SideCart';
 import Cards from './components/Cards/Cards';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <div className="App">
