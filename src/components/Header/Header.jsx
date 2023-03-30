@@ -9,7 +9,7 @@ function Header() {
   return (
     <Navbar bg="white" expand="lg">
       <Container>
-        <Navbar.Brand href="#"><h2>Explore Happy Coding</h2></Navbar.Brand>
+        <Navbar.Brand href="#"><h2 className='fw-bold'>Explore Happy Coding</h2></Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
