@@ -6,17 +6,19 @@ import SideCart from './components/SideCart/SideCart';
 import Cards from './components/Cards/Cards';
 
 function App() {
+  const [readTime, setReadTime] = useState("")
+
   const [count, setCount] = useState(0);
   const handleBookMark = (time) => {
-    const prevoiusMin = JSON.parse(localStorage.getItem("seeMin"));
-    if(prevoiusMin){
-      const sum = prevoiusMin + time;
+    const previousMin = JSON.parse(localStorage.getItem("seeMin"));
+    if(previousMin){
+      const sum = previousMin + time;
       localStorage.setItem("seeMin", sum);
-      setReadTime(sum)
+      setReadTime(sum);
     }
     else{
       localStorage.setItem("seeMin", time);
-      setReadTime(time)
+      setReadTime(time);
     }
   }
 
@@ -32,7 +34,7 @@ function App() {
            ></Cards>
         </div>
         <div className='side-cart col-md-5 card'> 
-          <SideCart></SideCart> 
+          <SideCart readTime={readTime}></SideCart> 
         </div>
       </div>
     </div>
