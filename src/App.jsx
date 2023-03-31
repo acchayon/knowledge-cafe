@@ -5,12 +5,14 @@ import Header from './components/Header/Header'
 import SideCart from './components/SideCart/SideCart';
 import Cards from './components/Cards/Cards';
 import Blogs from './components/Blogs/Blogs';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
-  const [readTime, setReadTime] = useState("")
+  const [readTime, setReadTime] = useState("");
 
   const [count, setCount] = useState(0);
-  const handleBookMark = (time) => {
+  const handleMarkAtRead = (time) => {
     const previousMin = JSON.parse(localStorage.getItem("seeMin"));
     if(previousMin){
       const sum = previousMin + time;
@@ -24,14 +26,14 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className="App container">
       <div className='header'>
         <Header></Header> 
       </div>
       <div className='main row'>
         <div className='left-card col-md-7'>
            <Cards 
-           handleBookMark={handleBookMark}
+           handleMarkAtRead={handleMarkAtRead}
            ></Cards>
         </div>
         <div className='side-cart col-md-5 card'> 
@@ -41,6 +43,7 @@ function App() {
       <div className='blogs'>
         <Blogs></Blogs>
       </div>
+      <ToastContainer></ToastContainer>
     </div>
   )
 }

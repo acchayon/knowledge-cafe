@@ -1,9 +1,15 @@
 import React from 'react';
 import './SingleCard.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBookmark } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBookmark } from '@fortawesome/free-solid-svg-icons';
+import { ToastContainer, toast } from 'react-toastify';
 
-const SingleCard = ({card, handleBookMark}) => {
+
+const SingleCard = (props) => {
+    // console.log(props)
+    const card = props.card;
+    const handleMarkAtRead = props.handleMarkAtRead;
+    const handleToast = () => toast("Wow you add bookmark!");
 
     return (
         <div>
@@ -21,7 +27,7 @@ const SingleCard = ({card, handleBookMark}) => {
                             <p>{card.date}</p>
                         </div>
                         <div className='col-md-3'>
-                            <p>{card.readTime} min read <a  href="#"><FontAwesomeIcon icon={faBookmark} /></a></p>
+                            <p onClick={handleToast} >{card.readTime} min read <a  onClick={() => handleBookmMarkTitle(card.title)} href="#"><FontAwesomeIcon icon={faBookmark} /></a></p>
                         </div>
                     </div>
                     <div className='title'>
@@ -30,7 +36,7 @@ const SingleCard = ({card, handleBookMark}) => {
                     <div>
                         <p>#beginners &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;  #programming</p>
                     </div>
-                    <a onClick={()=> handleBookMark(card.readTime)} href="#">Mark at read</a>
+                    <a onClick={()=> handleMarkAtRead(card.readTime)} href="#">Mark at read</a>
 
                 </div>
             </div>
@@ -41,17 +47,3 @@ const SingleCard = ({card, handleBookMark}) => {
 export default SingleCard;
 
 
-// {/* <Card style={{ width: '42rem' }}>
-//                 <Card.Img variant="top" src={card.coverImg} />
-//                 <Card.Body>
-//                     <Card.Title>{card.title}</Card.Title>
-//                     <Card.Text>
-//                     Some quick example text to build on the card title and make up the
-//                     bulk of the card's content.
-//                     </Card.Text>
-//                 </Card.Body>
-                
-//                 <Card.Body>
-//                     <Card.Link href="#">Mark as read</Card.Link>
-//                 </Card.Body>
-//             </Card> */}
