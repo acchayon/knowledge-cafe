@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import SingleCard from '../SingleCard/SingleCard';
 
-const Cards = (props) => {
-    console.log(props)
+const Cards = ({handleBookMark}) => {
     const [cards, setCards] = useState([]);
     useEffect(() => {
         fetch("data.json")
@@ -12,7 +11,9 @@ const Cards = (props) => {
     return (
         <div className='cards-container'>
             {
-                cards.map((card) => <SingleCard card={card}></SingleCard>)
+                cards.map(card => <SingleCard
+                    key={card.id}
+                     handleBookMark={handleBookMark} card={card}></SingleCard>)
             }
         </div>
     );

@@ -3,8 +3,8 @@ import './SingleCard.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBookmark } from '@fortawesome/free-solid-svg-icons'
 
-const SingleCard = ({card}) => {
-    console.log(card)
+const SingleCard = ({card, handleBookMark}) => {
+
     return (
         <div>
             <div className='card-container'>
@@ -21,7 +21,7 @@ const SingleCard = ({card}) => {
                             <p>{card.date}</p>
                         </div>
                         <div className='col-md-3'>
-                            <p>{card.readTime} min read  <FontAwesomeIcon icon={faBookmark} /></p>
+                            <p>{card.readTime} min read <a onClick={()=> handleBookMark(card.readTime)} href="#"><FontAwesomeIcon icon={faBookmark} /></a></p>
                         </div>
                     </div>
                     <div className='title'>
@@ -41,17 +41,17 @@ const SingleCard = ({card}) => {
 export default SingleCard;
 
 
-{/* <Card style={{ width: '42rem' }}>
-                <Card.Img variant="top" src={card.coverImg} />
-                <Card.Body>
-                    <Card.Title>{card.title}</Card.Title>
-                    <Card.Text>
-                    Some quick example text to build on the card title and make up the
-                    bulk of the card's content.
-                    </Card.Text>
-                </Card.Body>
+// {/* <Card style={{ width: '42rem' }}>
+//                 <Card.Img variant="top" src={card.coverImg} />
+//                 <Card.Body>
+//                     <Card.Title>{card.title}</Card.Title>
+//                     <Card.Text>
+//                     Some quick example text to build on the card title and make up the
+//                     bulk of the card's content.
+//                     </Card.Text>
+//                 </Card.Body>
                 
-                <Card.Body>
-                    <Card.Link href="#">Mark as read</Card.Link>
-                </Card.Body>
-            </Card> */}
+//                 <Card.Body>
+//                     <Card.Link href="#">Mark as read</Card.Link>
+//                 </Card.Body>
+//             </Card> */}
