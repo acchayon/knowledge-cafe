@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Header/Header'
 import SideCart from './components/SideCart/SideCart';
 import Cards from './components/Cards/Cards';
+import Blogs from './components/Blogs/Blogs';
 
 function App() {
   const [readTime, setReadTime] = useState("")
@@ -36,6 +37,9 @@ function App() {
         <div className='side-cart col-md-5 card'> 
           <SideCart readTime={readTime}></SideCart> 
         </div>
+      </div>
+      <div className='blogs'>
+        <Blogs></Blogs>
       </div>
     </div>
   )

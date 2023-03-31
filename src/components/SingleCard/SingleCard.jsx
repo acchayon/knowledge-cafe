@@ -21,7 +21,7 @@ const SingleCard = ({card, handleBookMark}) => {
                             <p>{card.date}</p>
                         </div>
                         <div className='col-md-3'>
-                            <p>{card.readTime} min read <a onClick={()=> handleBookMark(card.readTime)} href="#"><FontAwesomeIcon icon={faBookmark} /></a></p>
+                            <p>{card.readTime} min read <a  href="#"><FontAwesomeIcon icon={faBookmark} /></a></p>
                         </div>
                     </div>
                     <div className='title'>
@@ -30,7 +30,7 @@ const SingleCard = ({card, handleBookMark}) => {
                     <div>
                         <p>#beginners &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;  #programming</p>
                     </div>
-                    <a href="#">Mark at read</a>
+                    <a onClick={()=> handleBookMark(card.readTime)} href="#">Mark at read</a>
 
                 </div>
             </div>
