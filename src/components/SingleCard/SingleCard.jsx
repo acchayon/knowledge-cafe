@@ -9,6 +9,7 @@ const SingleCard = (props) => {
     // console.log(props)
     const card = props.card;
     const handleMarkAtRead = props.handleMarkAtRead;
+    const handleBookmMarkTitle = props.handleBookmMarkTitle;
     const handleToast = () => toast("Wow you add bookmark!");
 
     return (

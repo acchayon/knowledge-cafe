@@ -30,7 +30,9 @@ const Cards = ({handleMarkAtRead}) => {
             }
             {
                cliked.map(clicks => <SideCart
+                key={clicks.id}
                 handleBookmMarkTitle={handleBookmMarkTitle}
+                clicks={clicks}
                ></SideCart>) 
             }
         </div>
